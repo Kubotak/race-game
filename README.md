@@ -3,6 +3,10 @@
 This is race-game for self excercise.
 
 
+## Practice
+Execute race_game.rb with command line.
+
+
 ## Usage
 
 1. Start race game after pushing UP key on start screen.
