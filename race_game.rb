@@ -1,4 +1,4 @@
-#! ruby -Ku
+#! ruby -Ks
 
 require "starruby"
 include StarRuby
