@@ -80,18 +80,15 @@ class Player
   end
 end
 
-SCREEN_W = 640
-SCREEN_H = 480
-SCREEN_X = 0
-SCREEN_Y = 0
 
 raceGame = Race.new
 players = Array.new(6) {|i| Player.new(i) }
+screen_axis_tbl = {"X" => 0, "Y" => 0, "W" => 640, "H" => 480}
 
-Game.run(SCREEN_W, SCREEN_H, :title => 'レース', :fps => 30) do |game|
+Game.run(screen_axis_tbl['W'], screen_axis_tbl['H'], :title => 'レース', :fps => 30) do |game|
   game.screen.clear
-  game.screen.render_texture(Texture.load(raceGame.get_bg_image), SCREEN_X, SCREEN_Y,
-                             :src_width => SCREEN_W, :src_height => SCREEN_H, :alpha => raceGame.screen_fade)
+  game.screen.render_texture(Texture.load(raceGame.get_bg_image), screen_axis_tbl['X'], screen_axis_tbl['Y'],
+                             :src_width => screen_axis_tbl['W'], :src_height => screen_axis_tbl['H'], :alpha => raceGame.screen_fade)
 
   if raceGame.play?
     players.each_with_index do |player, i|
